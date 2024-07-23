@@ -1,0 +1,223 @@
+.slick-slide h2 {
+  font-size: 20px;
+}
+
+.slick-slide p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.slick-slide a {
+  margin-top: 10px;
+  text-decoration: none;
+  color: var(--wp--preset--color--primary);
+  width: fit-content;
+  border: 2px solid var(--wp--preset--color--primary);
+  padding: 1px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* for arrowws */
+
+.slick-arrow {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.slick-arrow:before {
+  font-size: 30px;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.btn-wrap {
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+}
+
+button {
+  border: none;
+  margin: 10px;
+  transition: all 0.2s;
+  opacity: 1;
+}
+
+button.slick-disabled {
+  opacity: 0.6;
+}
+
+/*  */
+
+.slick-slider .slick-arrow {
+  display: none !important;
+}
+
+.prev-btn {
+  width: 20px;
+  height: 20px;
+  background: url("../../../Icons/Arrows/arrow-left.svg") 0 0 / 100% no-repeat;
+}
+
+.next-btn {
+  width: 20px;
+  height: 20px;
+  background: url("../../../Icons/Arrows/arrow-right.svg") 0 0 / 100% no-repeat;
+}
+
+.slick-slider-wrapper {
+  width: 70%;
+  /* float: right; */
+  margin-right: 0;
+  margin-left: auto;
+
+  /* z-index: 999;
+
+  position: absolute;
+  right: 0;
+  top: 80%; */
+}
+
+/*  */
+
+.slick-slide {
+  padding: 20px;
+  border: 1px solid #275c8d10;
+  border-radius: 10px;
+  box-shadow: 4px 4px 2px 2px #275c8d10;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 250px;
+  margin: 0 10px;
+  min-height: 1px;
+  float: left;
+
+  background: white;
+}
+
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+
+/* .slick-slide.slick-loading img {
+  display: none;
+} */
+
+/* .slick-slide.dragging img {
+  pointer-events: none;
+} */
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+/* move this common css */
+.m-0 {
+  margin: 0px;
+}
+
+.col-item {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.position-absolute {
+  position: absolute;
+  z-index: 999;
+  right: 0; /* could split this and make attr in future for left / right / centre  */
+}
+
+/* positions */
+.top-50 {
+  top: 50%;
+}
+.top-60 {
+  top: 60%;
+}
+.top-70 {
+  top: 70%;
+}
+.top-80 {
+  top: 80%;
+}
