@@ -89,6 +89,14 @@
           "padding": true,
           "margin": true
         }
+      },
+      "core/column": {
+        "appearanceTools": true,
+        "spacing": {
+          "padding": true,
+          "margin": true,
+          "blockGap": true
+        }
       }
     },
 
@@ -176,27 +184,34 @@
       "fontSizes": [
         {
           "slug": "extra-small",
-          "size": "1rem",
+          "comment_size": "1rem",
+          "comment_size": "clamp(1rem, 0.9512rem + 0.2233vw, 1.3rem)",
+          "size": "16px",
           "name": "Extra small"
         },
         {
-          "slug": "small",
-          "size": "1.125rem",
+          "slug": "info-small",
+          "comment_size": "1.125rem",
+          "comment_size": "clamp(1.125rem, 1.0762rem + 0.2233vw, 1.425rem)",
+          "size": "18px",
           "name": "Small"
         },
         {
-          "slug": "medium",
-          "size": "1.25rem",
+          "slug": "info-medium",
+          "comment_size": "1.25rem",
+          "size": "clamp(1.25rem, 1.2012rem + 0.2233vw, 1.55rem)",
           "name": "Medium"
         },
         {
-          "slug": "large",
-          "size": "1.5rem",
+          "slug": "info-large",
+          "comment_size": "1.5rem",
+          "size": "clamp(1.5rem, 1.4512rem + 0.2233vw, 1.8rem)",
           "name": "Large"
         },
         {
           "slug": "extra-large",
-          "size": "2.5rem",
+          "comment_size": "clamp(2rem, 1.8983rem + 0.4651vw, 2.625rem)",
+          "size": "clamp(2rem, 1.8779rem + 0.5581vw, 2.75rem)",
           "name": "Extra large"
         }
       ],
