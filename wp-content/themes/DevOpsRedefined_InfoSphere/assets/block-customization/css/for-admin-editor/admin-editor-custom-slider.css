@@ -135,8 +135,8 @@ button.slick-disabled {
   background: url("../../../Icons/Arrows/arrow-right.svg") 0 0 / 100% no-repeat;
 }
 
-.slick-slider-wrapper {
-  width: 70%;
+.fixed-width-slick-slider-wrapper {
+  width: 80%;
   /* float: right; */
   margin-right: 0;
   margin-left: auto;
@@ -149,6 +149,11 @@ button.slick-disabled {
 
   /* for admin scroll bar */
 
+  overflow: scroll;
+}
+
+.slick-slider-wrapper {
+  width: 100%;
   overflow: scroll;
 }
 

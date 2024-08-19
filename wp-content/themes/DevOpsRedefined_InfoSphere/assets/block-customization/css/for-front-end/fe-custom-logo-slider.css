@@ -1,0 +1,85 @@
+.logo-slick-slider-wrapper {
+  width: 100%;
+}
+
+/* slick sldier id and higher order of logo-slick-slider*/
+.logos-slick-slider {
+  display: flex;
+  padding: 10px 0 10px 0;
+}
+
+/* higher order container for image */
+.logo-slick-slider {
+  display: block;
+  box-sizing: border-box;
+  padding: 50px 50px;
+  box-shadow: 0px 4px 12px 1px #3e409533;
+  border-radius: 1px;
+  margin: 0 10px;
+}
+
+/* for image */
+.logo-image-container {
+  /* width: 150px;
+  margin: auto;
+  height: 100px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+
+  width: 200px;
+  margin: auto;
+  height: 75px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo-slick-slider-wrapper .slick-slide {
+  /* padding: 20px;
+  border: 1px solid #275c8d10;
+  border-radius: 10px;
+  box-shadow: 4px 4px 2px 2px #275c8d10;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 250px;
+  margin: 0 10px;
+  min-height: 1px;
+  float: left;
+
+  background: white; */
+
+  padding: 20px;
+  border: 1px solid #275c8d10;
+  border-radius: 10px;
+  box-shadow: 4px 4px 2px 2px #275c8d10;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 250px;
+  margin: 0 10px;
+  min-height: 250px;
+  /* min-height: 1px; */
+  float: left;
+  background: white;
+}
+
+.logo-slick-slider-wrapper .slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}

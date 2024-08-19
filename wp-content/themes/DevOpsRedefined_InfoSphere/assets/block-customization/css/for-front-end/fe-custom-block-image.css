@@ -1,0 +1,37 @@
+/* border classes */
+
+.image-border-radius-0 img {
+  border-radius: 0px;
+}
+.image-border-radius-1 img {
+  border-radius: 1px;
+}
+.image-border-radius-2 img {
+  border-radius: 2px;
+}
+.image-border-radius-3 img {
+  border-radius: 3px;
+}
+.image-border-radius-4 img {
+  border-radius: 4px;
+}
+.image-border-radius-5 img {
+  border-radius: 5px;
+}
+.image-border-radius-6 img {
+  border-radius: 6px;
+}
+.image-border-radius-7 img {
+  border-radius: 7px;
+}
+.image-border-radius-8 img {
+  border-radius: 8px;
+}
+.image-border-radius-9 img {
+  border-radius: 9px;
+}
+.image-border-radius-10 img {
+  border-radius: 10px;
+}
+
+/* Add more styles based on your range values */

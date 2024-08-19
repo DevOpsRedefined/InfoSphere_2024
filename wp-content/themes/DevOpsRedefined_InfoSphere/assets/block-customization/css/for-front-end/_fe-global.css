@@ -1,0 +1,154 @@
+/* move this common css  / global css*/
+
+/* when user selects content on page */
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--wp--preset--color--primary-dark);
+  background: var(--wp--preset--color--secondary-light);
+}
+
+::selection {
+  color: var(--wp--preset--color--primary);
+  background: var(--wp--preset--color--secondary-light);
+
+  /* color: white;
+    background: var(--wp--preset--color--primary-dark); */
+}
+
+.has-primary-color::selection {
+  color: white;
+  /* color: var(--wp--preset--color--secondary-light); */
+  /* background: var(--wp--preset--color--primary-dark); */
+}
+.has-secondary-light-color::selection {
+  color: white;
+}
+
+/* contact form 7 / NewsLetter */
+.newsletter-icon {
+  background-image: url("http://localhost/InfoSphere_2024/wp-content/uploads/2024/08/submit-Vector.svg");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+}
+
+.formEnrolNowSubmit {
+  background: white;
+  display: flex;
+  padding: 10px 15px 10px 15px;
+  align-items: center;
+  border: 0;
+  border-radius: 6px;
+  color: white;
+}
+
+.enrolEmailInput {
+  padding: 10px;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  border: 0;
+  border-bottom: 3px solid var(--wp--preset--color--secondary-light);
+  font-family: "Helvetica neue";
+  font-weight: 500;
+  color: var(--wp--preset--color--primary);
+  box-shadow: -4px 7px 0px var(--wp--preset--color--primary-dark);
+  border-top: 3px solid var(--wp--preset--color--primary-dark);
+  border-left: 3px solid var(--wp--preset--color--primary-dark);
+  border-right: 3px solid var(--wp--preset--color--primary-dark);
+  transition: 30ms ease-in-out all;
+}
+
+.enrolEmailInput::placeholder {
+  color: var(--wp--preset--color--primary);
+  opacity: 1; /* Firefox */
+}
+
+.enrolEmailInput::-ms-input-placeholder {
+  /* Edge 12-18 */
+  color: var(--wp--preset--color--primary);
+}
+
+.enrolEmailInput:focus {
+  /* outline: var(--wp--preset--color--primary); */
+  transition: 30ms ease-in-out all;
+
+  outline: none !important;
+  /* border-top: 3px solid var(--wp--preset--color--primary-dark);
+    border-left: 3px solid var(--wp--preset--color--primary-dark);
+    border-right: 3px solid var(--wp--preset--color--primary-dark); */
+  /* box-shadow: -2px 4px 0px var(--wp--preset--color--primary-dark); */
+  box-shadow: -3px 6px 0px var(--wp--preset--color--primary-dark);
+  /* box-shadow: 0 0 10px var(--wp--preset--color--primary-dark); */
+  opacity: 1; /* Firefox */
+}
+
+/* ScrollBar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  display: block;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #f1f1f1; */
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: #888; */
+  background: var(--wp--preset--color--primary-dark);
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* utility classes */
+.m-0 {
+  margin: 0px;
+}
+
+/* override */
+body > div {
+  box-sizing: border-box;
+}
+
+p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.is-layout-constrained > .alignwide {
+  max-width: calc(var(--wp--style--global--wide-size) * 1.5);
+}
+
+@media screen and (max-width: 1800px) {
+  .is-layout-constrained > .alignwide {
+    max-width: var(--wp--style--global--wide-size);
+  }
+}
+
+/* experimental -- GSAP */
+.wp-block-image.gsap-default-animation img {
+  /* opacity: 1; /* Start with the image hidden */
+  /* transform: translateY(-100px); */
+  /* Start the image 100px above its final position */
+  will-change: opacity, transform; /* Hint to the browser */
+}
+
+.wp-block-group.gsap-group-text-animation div :first-child {
+  /* opacity: 1; Start with the image hidden */
+  /* transform: translateX( */
+  /* -100px */
+  /* ); Start the image 100px above its final position */
+  will-change: opacity, transform; /* Hint to the browser */
+}
