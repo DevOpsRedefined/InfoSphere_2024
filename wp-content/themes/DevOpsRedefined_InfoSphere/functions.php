@@ -33,7 +33,10 @@ add_action('wp_enqueue_scripts', 'lesson_one_style');
 
 function cc_mime_types($mimes)
 {
+
     $mimes['svg'] = 'image/svg+xml';
+    // $mimes['svg'] = 'image/svg';
+
     return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
@@ -48,7 +51,6 @@ function fix_svg()
           </style>';
 }
 add_action('admin_head', 'fix_svg');
-
 
 
 
@@ -104,6 +106,28 @@ function extend_core_navigation_link_attr($block_content, $block)
 
 add_filter('render_block', 'extend_core_navigation_link_attr', 10, 2);
 
+/******* 
+ * 
+ * below code will check for core/navigation and if it has customRange attribute 
+ * and then its gonna read its value in $custom_range and will add 
+ * the class custom-range- and will concate custom_range's value in $block_content 
+ * 
+ * *******/
+function extend_core_navigation_attr($block_content, $block)
+{
+
+    if ($block['blockName'] === 'core/navigation' && isset($block['attrs']['customBlockGap'])) {
+        $custom_block_gap = esc_attr($block['attrs']['customBlockGap']);
+        $block_content = str_replace('wp-block-navigation__container', 'wp-block-navigation__container custom-block-gap-' . $custom_block_gap, $block_content);
+        // $block_content = str_replace('>', 'style="border-radius:' . $custom_range . 'px;" >', $block_content);
+
+    }
+    return $block_content;
+}
+
+
+add_filter('render_block', 'extend_core_navigation_attr', 10, 2);
+
 function register_navigation_link_extended_attributes()
 {
     // Ensure the block type is registered before adding attributes
@@ -134,15 +158,12 @@ add_action('init', 'register_navigation_link_extended_attributes');
  ****/
 require_once get_template_directory() . '/enqueue-assets/enqueue-blockFE-styles.php';
 
-
-
 /****
  * 
  * enqueue styles here for editor block
  * 
  ****/
 require_once get_template_directory() . '/enqueue-assets/enqueue-block-styles.php';
-
 
 /****
  * 
@@ -151,58 +172,16 @@ require_once get_template_directory() . '/enqueue-assets/enqueue-block-styles.ph
  ****/
 require_once get_template_directory() . '/enqueue-assets/enqueue-block-scripts.php';
 
-
 /****
  * 
  * enqueue scripts for FE
  * 
  ****/
-
-
 require_once get_template_directory() . '/enqueue-assets/enqueue-blockFE-scripts.php';
 
 
-/****** 
- * 
- * So lets add the first slider for home page
- * 
- * GONNA THROW ALL THE STUFF HERE AND THEN WE REFINE CODE
- * 
- * ref  https://chatgpt.com/c/efebef72-2baa-4113-aaf8-136bfdddd8a2
- * 
- * ******/
-/*
-Plugin Name: Custom Slick Slider Block
-Description: A custom block that integrates Slick Slider.
-Version: 1.0
-Author: Your Name
-*/
 
-// Enqueue block editor assets
-// function custom_slick_slider_block_editor_assets()
-// {
-
-
-//     /******
-//      *
-//      * for slider js block
-//      *
-//      ******/
-//     $script_build_path = 'C:\xampp\htdocs\InfoSphere_2024\wp-content\themes\DevOpsRedefined_InfoSphere\assets\block-customization\build-blocks';
-//     $in_footer = false;
-//     $depts = array('wp-blocks', 'wp-element', 'wp-components', 'wp-compose', 'wp-editor'); // dependencies, if any
-
-
-//     $slider_path = $script_build_path . '\blocks-js\custom-slider\custom-slider.js';
-//     $slider_handle = 'custom-slider-handle';
-//     $slider_src = get_template_directory_uri() . '/assets/block-customization/build-blocks/blocks-js/custom-slider/custom-slider.js';
-//     $slider_ver = filemtime($slider_path);
-
-//     wp_enqueue_script($slider_handle, $slider_src, $depts, $slider_ver, $in_footer);
-// }
-// add_action('enqueue_block_editor_assets', 'custom_slick_slider_block_editor_assets');
-
-
+// move thisa to admin stlyes import
 function my_add_editor_styles_to_full_site_editing()
 {
     $src_css = '/assets/block-customization/css/for-admin-editor/admin-editor-custom-slider.css';

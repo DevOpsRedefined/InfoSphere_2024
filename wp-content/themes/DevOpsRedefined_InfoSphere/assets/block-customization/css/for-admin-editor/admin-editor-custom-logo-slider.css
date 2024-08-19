@@ -1,0 +1,33 @@
+/* slick sldier id and higher order of all child*/
+
+.logo-slick-slider-wrapper {
+  width: 100%;
+  overflow: scroll;
+}
+
+/* slick sldier id and higher order of logo-slick-slider*/
+.logos-slick-slider {
+  display: flex;
+  padding: 10px 0 10px 0;
+}
+
+/* higher order container for image */
+.logo-slick-slider {
+  display: block;
+  box-sizing: border-box;
+  padding: 50px 50px;
+  box-shadow: 0px 4px 12px 1px #3e409533;
+  border-radius: 1px;
+  margin: 0 10px;
+}
+
+/* for image */
+.logo-image-container {
+  width: 150px;
+  margin: auto;
+  height: 100px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

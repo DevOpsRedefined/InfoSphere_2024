@@ -3,6 +3,7 @@ import { registerBlockType } from "@wordpress/blocks";
 import {
   PanelBody,
   TextControl,
+  TextareaControl,
   Button,
   ToggleControl,
   RangeControl,
@@ -57,6 +58,7 @@ registerBlockType("custom/slick-slider", {
 
     isOverlaySlider: Boolean, // use this to add absolute class to div
     topPosition: Number, // use this to add top value for an overlay
+    isFixedsliderWidth: { type: "boolean", default: true },
   },
 
   edit: ({ attributes, setAttributes }) => {
@@ -64,7 +66,13 @@ registerBlockType("custom/slick-slider", {
 
     /* new */
 
-    const { slides, sliderId, isOverlaySlider, topPosition } = attributes;
+    const {
+      slides,
+      sliderId,
+      isOverlaySlider,
+      topPosition,
+      isFixedsliderWidth,
+    } = attributes;
 
     const updateSlide = (index, key, value) => {
       const newSlides = [...slides];
@@ -100,28 +108,36 @@ registerBlockType("custom/slick-slider", {
       if (isOverlaySlider) {
         return (
           <RangeControl
-            label="Border Radius"
+            label="Top position"
             value={attributes.topPosition}
             onChange={(value) => setAttributes({ topPosition: value })}
-            min={50}
-            max={80}
-            step={10}
+            min={250}
+            max={750}
+            step={100}
             marks={[
               {
-                value: 50,
-                label: "50",
+                value: 250,
+                label: "250",
               },
               {
-                value: 60,
-                label: "60",
+                value: 350,
+                label: "350",
               },
               {
-                value: 70,
-                label: "70",
+                value: 450,
+                label: "450",
               },
               {
-                value: 80,
-                label: "80",
+                value: 550,
+                label: "550",
+              },
+              {
+                value: 650,
+                label: "650",
+              },
+              {
+                value: 750,
+                label: "750",
               },
             ]}
           />
@@ -164,6 +180,18 @@ registerBlockType("custom/slick-slider", {
               />
               {renderExtraOverlayOptions()}
             </PanelBody>
+
+            <ToggleControl
+              label={wp.i18n.__("Fixed Slider Width -- ForAccentImage", "awp")}
+              checked={!!isFixedsliderWidth}
+              // checked={false}
+              onChange={() => {
+                setAttributes({
+                  isFixedsliderWidth: !isFixedsliderWidth,
+                }),
+                  setOpenSliderOverlayState(true);
+              }}
+            />
           </PanelBody>
 
           {slides.map((slide, index) => (
@@ -179,7 +207,7 @@ registerBlockType("custom/slick-slider", {
                 value={slide.title}
                 onChange={(value) => updateSlide(index, "title", value)}
               />
-              <TextControl
+              <TextareaControl
                 label={__("Subtitle")}
                 value={slide.subtitle}
                 onChange={(value) => updateSlide(index, "subtitle", value)}
@@ -201,51 +229,21 @@ registerBlockType("custom/slick-slider", {
           </PanelBody>
         </InspectorControls>
 
-        {/****
-         *  add some styles for admin
-         ****/}
-
-        {/* <div {...blockProps}>
-          <div className={sliderId}>
-            {slides.map((slide, index) => (
-              <div
-                className="slick-slide--wont-work"
-                key={index}
-                style={{
-                  border: "1px dashed #ddd",
-                  padding: "10px",
-                  marginBottom: "10px",
-                }}
-              >
-                <h2>{slide.title || __("Title")}</h2>
-                <p>{slide.subtitle || __("Subtitle")}</p>
-                {slide.link && (
-                  <a
-                    href={slide.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {__("Read More")}
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
-        </div> */}
-
         <div
           {...blockProps}
           className={
             (topPosition ? "top-" + topPosition : "") +
             (isOverlaySlider ? " position-absolute" : "") +
-            " slick-slider-wrapper"
+            (isFixedsliderWidth
+              ? " fixed-width-slick-slider-wrapper"
+              : " slick-slider-wrapper")
           }
         >
           <div className={sliderId + " slick-track"}>
             {slides.map((slide, index) => (
               <div key={index} className="col slick-slide">
                 <div className="col-item">
-                  <h2 className="has-helvetica-neue-font-family has-medium-font-size m-0">
+                  <h2 className="has-helvetica-neue-font-family has-info-medium-font-size m-0">
                     {slide.title || __("Title")}
                   </h2>
                   <p className="has-helvetica-neue-font-family">
@@ -274,55 +272,29 @@ registerBlockType("custom/slick-slider", {
     );
   },
   save: ({ attributes }) => {
-    const { slides, sliderId, isOverlaySlider, topPosition } = attributes;
+    const {
+      slides,
+      sliderId,
+      isOverlaySlider,
+      topPosition,
+      isFixedsliderWidth,
+    } = attributes;
 
     return (
-      /****
-       *  add some styles for fe
-       ****/
-      // <div className="slick-slider-wrapper">
-      //   <div className={sliderId}>
-      //     {slides.map((slide, index) => (
-      //       <div key={index} className="col">
-      //         <div className="col-item">
-      //           <h2 className="has-helvetica-neue-font-family has-medium-font-size m-0">
-      //             {slide.title}
-      //           </h2>
-      //           <p className="has-helvetica-neue-font-family">
-      //             {slide.subtitle}
-      //           </p>
-      //           {slide.link && (
-      //             <a
-      //               href={slide.link}
-      //               target="_blank"
-      //               rel="noopener noreferrer"
-      //             >
-      //               {__("Read More")}
-      //             </a>
-      //           )}
-      //         </div>
-      //       </div>
-      //     ))}
-      //   </div>
-
-      //   <div className="btn-wrap">
-      //     <button className="prev-btn"></button>
-      //     <button className="next-btn"></button>
-      //   </div>
-      // </div>
-
       <div
         className={
           (topPosition ? "top-" + topPosition : "") +
           (isOverlaySlider ? " position-absolute" : "") +
-          " slick-slider-wrapper"
+          (isFixedsliderWidth
+            ? " fixed-width-slick-slider-wrapper"
+            : " slick-slider-wrapper")
         }
       >
         <div className={sliderId}>
           {slides.map((slide, index) => (
             <div key={index} className="col">
               <div className="col-item">
-                <h2 className="has-helvetica-neue-font-family has-medium-font-size m-0">
+                <h2 className="has-helvetica-neue-font-family has-info-medium-font-size m-0">
                   {slide.title}
                 </h2>
                 <p className="has-helvetica-neue-font-family">
@@ -347,7 +319,6 @@ registerBlockType("custom/slick-slider", {
     );
   },
 });
-// const { createHigherOrderComponent } = wp.compose;
 const withCustomClassName = createHigherOrderComponent((BlockListBlock) => {
   return (props) => {
     if (props.attributes.size) {

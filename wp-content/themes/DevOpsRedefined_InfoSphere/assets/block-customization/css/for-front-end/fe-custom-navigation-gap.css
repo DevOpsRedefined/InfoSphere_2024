@@ -1,0 +1,87 @@
+/* border classes */
+
+.custom-block-gap-0 {
+  gap: 0px;
+}
+/* .custom-block-gap-1 {
+  gap: 1px;
+}
+.custom-block-gap-2 {
+  gap: 2px;
+}
+.custom-block-gap-3 {
+  gap: 3px;
+}
+.custom-block-gap-4 {
+  gap: 4px;
+} */
+.custom-block-gap-5 {
+  gap: 5px;
+}
+/* .custom-block-gap-6 {
+  gap: 6px;
+}
+
+.custom-block-gap-7 {
+  gap: 7px;
+}
+
+.custom-block-gap-8 {
+  gap: 8px;
+}
+
+.custom-block-gap-9 {
+  gap: 9px;
+} */
+
+.custom-block-gap-10 {
+  gap: 10px;
+}
+/* .custom-block-gap-11 {
+  gap: 11px;
+}
+.custom-block-gap-12 {
+  gap: 12px;
+}
+.custom-block-gap-13 {
+  gap: 13px;
+}
+.custom-block-gap-14 {
+  gap: 14px;
+} */
+.custom-block-gap-15 {
+  gap: 15px;
+}
+/* .custom-block-gap-16 {
+  gap: 16px;
+}
+.custom-block-gap-17 {
+  gap: 17px;
+}
+.custom-block-gap-18 {
+  gap: 18px;
+}
+.custom-block-gap-19 {
+  gap: 19px;
+} */
+.custom-block-gap-20 {
+  gap: 20px;
+}
+
+.custom-block-gap-25 {
+  gap: 25px;
+}
+
+.custom-block-gap-30 {
+  gap: 30px;
+}
+
+.custom-block-gap-35 {
+  gap: 35px;
+}
+
+.custom-block-gap-40 {
+  gap: 40px;
+}
+
+/* Add more styles based on your range values */
