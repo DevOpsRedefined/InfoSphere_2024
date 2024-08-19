@@ -20,6 +20,19 @@ module.exports = {
 
     "blocks-js/custom-slider/custom-slider":
       "./src/blocks-js/custom-slider/custom-slider.js",
+
+    "blocks-js/core-navigation/core-navigation":
+      "./src/blocks-js/core-navigation/core-navigation.js",
+
+    "blocks-js/core-image/core-image":
+      "./src/blocks-js/core-image/core-image.js",
+
+    "blocks-js/core-group/core-group":
+      "./src/blocks-js/core-group/core-group.js",
+
+    "blocks-js/custom-slider-partners-logos/custom-slider-partners-logos":
+      "./src/blocks-js/custom-slider-partners-logos/custom-slider-partners-logos.js",
+
   },
   output: {
     path: path.join(__dirname, "./build-blocks"),
